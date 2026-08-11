@@ -10,11 +10,11 @@ import { Status } from "@/components/ui/StatusBadge";
    ============================================================ */
 
 const TEAM = [
-  ["priya.n@northwind.io", "Owner", "All resources", "now"],
-  ["d.mehta@northwind.io", "Platform admin", "All resources", "12m ago"],
-  ["a.rao@northwind.io", "Developer", "orders, storefront", "2h ago"],
-  ["s.iyer@northwind.io", "Developer", "recs-engine", "5h ago"],
-  ["billing@northwind.io", "Billing viewer", "Billing only", "3d ago"],
+  ["priya.n@curiositycloud.ai", "Owner", "All resources", "now"],
+  ["d.mehta@curiositycloud.ai", "Platform admin", "All resources", "12m ago"],
+  ["a.rao@curiositycloud.ai", "Developer", "orders, storefront", "2h ago"],
+  ["s.iyer@curiositycloud.ai", "Developer", "recs-engine", "5h ago"],
+  ["billing@curiositycloud.ai", "Billing viewer", "Billing only", "3d ago"],
 ] as const;
 
 export function Access() {

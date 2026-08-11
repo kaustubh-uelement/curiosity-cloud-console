@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Icon, P } from "@/lib/icons";
 import { CommandPalette } from "./CommandPalette";
 
@@ -25,8 +27,8 @@ interface ProjectOption {
 
 const PROJECTS: ProjectOption[] = [
   {
-    id: "northwind-prod",
-    name: "northwind-prod",
+    id: "curiositycloud-prod",
+    name: "curiositycloud-prod",
     env: "prod",
     nodes: 6,
     region: "Pune-1",
@@ -102,7 +104,7 @@ const NOTIFICATIONS = [
 ];
 
 export function TopBar({ onNavigate }: TopBarProps) {
-  const [selectedProject, setSelectedProject] = useState("northwind-prod");
+  const [selectedProject, setSelectedProject] = useState("curiositycloud-prod");
   const [selectedRegion, setSelectedRegion] = useState("Pune-1");
   const [isProjectOpen, setIsProjectOpen] = useState(false);
   const [isRegionOpen, setIsRegionOpen] = useState(false);
@@ -160,35 +162,19 @@ export function TopBar({ onNavigate }: TopBarProps) {
         <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 min-w-0 flex-1">
           {/* Logo & Brand Name */}
           <div className="flex items-center gap-2 shrink-0 pr-2 sm:pr-3 md:pr-4 border-r border-hair">
-            <div
-              className="relative group cursor-pointer shrink-0"
-              onClick={() => onNavigate?.("home")}
+            <Link
+              href="/"
+              className="items-center gap-2 hidden md:flex shrink-0"
             >
-              <span
-                className="w-7 h-7 rounded-[8px] grid place-items-center text-white text-[13px] font-extrabold font-heading shadow-md transition-transform duration-200 group-hover:scale-105"
-                style={{
-                  background:
-                    "conic-gradient(from 200deg, #6D28D9, #4F46E5, #2563EB, #0EA5E9, #22D3EE, #6D28D9)",
-                  boxShadow: "0 0 16px rgba(79, 70, 229, 0.35)",
-                }}
-              >
-                C
-              </span>
-              <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-ok ring-2 ring-white" />
-            </div>
-
-            <div className="items-center gap-2 hidden md:flex">
-              <span
-                onClick={() => onNavigate?.("home")}
-                className="font-heading font-bold text-[15px] text-ink tracking-tight hover:text-magenta cursor-pointer transition-colors whitespace-nowrap"
-              >
-                Curiosity Cloud
-              </span>
-              <span className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9.5px] font-extrabold uppercase tracking-widest bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Console
-              </span>
-            </div>
+              <Image
+                src="/curiosity.png"
+                alt="Curiosity Cloud"
+                width={120}
+                height={20}
+                priority
+                className="h-5 w-auto object-contain hover:opacity-80 transition-opacity"
+              />
+            </Link>
           </div>
 
           {/* Project Switcher Dropdown */}
@@ -659,11 +645,11 @@ export function TopBar({ onNavigate }: TopBarProps) {
                     Pranav Nambiar
                   </div>
                   <div className="text-[11.5px] text-slate-light font-mono truncate">
-                    pranav@northwind.ai
+                    pranav@curiositycloud.ai
                   </div>
                   <div className="mt-1.5 flex items-center gap-1.5">
                     <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-purple-50 text-purple border border-purple/20">
-                      Northwind Enterprise
+                      CuriosityCloud
                     </span>
                   </div>
                 </div>
